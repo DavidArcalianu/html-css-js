@@ -1,0 +1,169 @@
+.body-background {
+    font-family: "Times New Roman", "Times", monospace;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: wheat;
+    padding: 5%;
+    flex: auto;
+}
+
+.image {
+    background-image: url("images/shrek.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-up {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-top: 100px;
+    color: white;
+}
+
+.carousel-item {
+    height: 400px;
+    background-color: grey;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.card-img-top {
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.card-img-top:hover {
+    opacity: 1;
+}
+
+#page-number {
+    border-radius: 30px;
+    margin: 1px;
+    transition: transform 0.3s ease;
+    color: black;
+}
+
+#page-number::after {
+    content: "";
+    position: absolute;
+    opacity: 0.3;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+#page-number:hover {
+    transform: translate(-4px, -4px);
+    background-color: wheat;
+}
+
+#page-number:hover::after {
+    transform: translate(4px, 4px);
+    background-color: wheat;
+}
+
+#from-night {
+    color: black;
+}
+
+#from-night::after,
+#from-night::before {
+    border: 2px solid black;
+    content: "";
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+#from-night:hover {
+    transform: translate(-2px, -2px);
+}
+
+#from-night:hover::after {
+    transform: translate(2px, 2px);
+}
+
+#from-night:hover::before {
+    transform: translate(-2px, -2px);
+}
+
+#next-prev {
+    border-radius: 30px;
+    color: black;
+    transition: ease-out 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+#next-prev:hover {
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+#next-prev::before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: wheat;
+    border-radius: 30px;
+}
+
+#next-prev:hover::before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+    border-radius: 30px;
+}
+
+#search {
+    background-color: blue;
+    color: white;
+    animation: signal 1s infinite;
+}
+
+@keyframes signal {
+    0% {
+        box-shadow: 0 0 0 0 blue;
+    }
+    100% {
+        box-shadow: 0 0 0 30px rgba(0, 0, 0, 0);
+    } 
+}
